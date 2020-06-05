@@ -19,7 +19,7 @@
 
             <ul id="menu">
                 <li class="active-btn">PRINT DESIGN</li>
-                <li><a href="portfolio-grid-gallery4-paintings.html">PAINTINGS</a></li>
+                <li><a href="paintings.md">PAINTINGS</a></li>
                 <li>ABOUT</li>
             </ul>
         </div>
