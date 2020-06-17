@@ -215,7 +215,7 @@ body {
 
 @media only screen and (max-width: 650px) {
     #header-wrapper {
-        height: 125px;
+        height: 126px;
     }
     #header {
         padding: 10px 0;
