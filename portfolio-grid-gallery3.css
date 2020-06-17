@@ -212,3 +212,40 @@ body {
     font-weight: 500;
     text-align: center;
 }
+
+@media only screen and (max-width: 650px) {
+    #header-wrapper {
+        height: 125px;
+    }
+    #header {
+        padding: 10px 0;
+    }
+    #title, #menu {
+        float: none;
+        text-align: center;
+    }
+    #menu {
+        margin-top: 20px;
+    }
+    #menu li {
+        padding: 0 4%;
+    }
+    #menu li:first-child {
+        padding-left: 10px;
+    }
+    #menu li:last-child {
+        padding-right: 10px;
+    }
+    .decoration {
+        padding: 0 10px;
+    }
+    #header-wrapper .decoration {
+        margin-top: 0;
+    }
+    .portfolio-page {
+        margin-top: 131px;
+    }
+    .masonry {
+        padding: 0 10px;
+    }
+}
