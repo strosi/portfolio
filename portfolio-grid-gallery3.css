@@ -248,4 +248,11 @@ body {
     .masonry {
         padding: 0 10px;
     }
+    #clicked-img-holder {
+        padding: 0 10px;
+        margin-top: 131px;
+    }
+    #clicked-img img {
+        margin-bottom: 5px;
+    }
 }
