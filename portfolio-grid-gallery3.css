@@ -213,7 +213,7 @@ body {
     text-align: center;
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 600px) {
     #header-wrapper {
         height: 126px;
     }
@@ -254,5 +254,8 @@ body {
     }
     #clicked-img img {
         margin-bottom: 5px;
+    }
+    #clicked-img img:last-child {
+        margin-bottom: 22px;
     }
 }
