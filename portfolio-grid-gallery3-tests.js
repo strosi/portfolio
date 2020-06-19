@@ -11,19 +11,17 @@ const closeImg = document.getElementById('close');
 let pageContainer = activePage.firstElementChild;
 
 
-// Hides unactive galleries
+// Hides unactive galleries. Changes buttons color
 
 function hidePage(page) {
     page.classList.add('hidden');
 }
-
 
 function switchActiveBtn(activeBtn, targetBtn) {
     activeBtn.classList.remove('active-btn');
     targetBtn.classList.add('active-btn');
     activeMenuButton = targetBtn;
 }
-
 
 
 // Sets images order in the grid gallery (masonry gallery)
@@ -73,28 +71,25 @@ function openNewPage(e) {
             hidePage(subGalleryHolder);
         }
 
-        if (e.target.id !== activeMenuButton || 
-            (e.target.id === activeMenuButton && e.target.style.display === 'none')) {
-            switchActiveBtn(activeMenuButton, e.target);
-            hidePage(activePage);
-            let galleryId = activeMenuButton.id.substr(0, activeMenuButton.id.length - 4);
-            activePage = document.getElementById(galleryId);
-            activePage.classList.remove('hidden');
+        switchActiveBtn(activeMenuButton, e.target);
+        hidePage(activePage);
+        let galleryId = activeMenuButton.id.substr(0, activeMenuButton.id.length - 4);
+        activePage = document.getElementById(galleryId);
+        activePage.classList.remove('hidden');
 
-            if (galleryId !== 'about') {
-                pageContainer = activePage.firstElementChild;
-                resizeAllMasonryItems();
-            }
-
-            window.scrollTo(0, 0);
+        if (galleryId !== 'about') {
+            pageContainer = activePage.firstElementChild;
+            resizeAllMasonryItems();
         }
+
+        window.scrollTo(0, 0);
     }
 }
 
 document.getElementById('menu').onclick = e => openNewPage(e);
 
 
-// Show the clicked image in subgallery. Sets 'clicked-img-holder' div display: block 
+// Show the clicked image in subgallery. Sets 'clicked-img-holder' div to display: block 
 // and 'gallery' div to display: none
 
 let targetImg;

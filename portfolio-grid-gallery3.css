@@ -91,6 +91,7 @@ body {
     margin-top: 100px;
     margin-bottom: 50px;
     display: block;
+    transition: opacity .3s;
 }
 
 .masonry {
@@ -119,6 +120,7 @@ body {
     margin: 0px auto;
     margin-top: 100px;
     margin-bottom: 55px;
+    transition: opacity .3s;
 }
 
 #clicked-img {
