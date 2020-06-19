@@ -35,6 +35,16 @@ function hidePage(page) {
     );
 }
 
+function showPage(page) {
+    window.setTimeout(
+        function () {
+            page.classList.remove('hidden');
+            resizeAllMasonryItems();
+            fadeIn(page);
+        }, 300
+    );
+}
+
 function switchActiveBtn(targetBtn) {
     activeMenuButton.classList.remove('active-btn');
     targetBtn.classList.add('active-btn');
@@ -93,13 +103,7 @@ function openNewPage(e) {
         hidePage(activePage);
         let galleryId = e.target.id.substr(0, e.target.id.length - 4);
         activePage = document.getElementById(galleryId);
-        window.setTimeout(
-            function () {
-                activePage.classList.remove('hidden');
-                resizeAllMasonryItems();
-                fadeIn(activePage);
-            }, 300
-        )
+        showPage(activePage);
 
         if (galleryId !== 'about') {
             pageContainer = activePage.firstElementChild;
