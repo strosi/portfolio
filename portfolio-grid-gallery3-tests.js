@@ -1,7 +1,8 @@
 // Global variables. Initial values
 
-let activePage = document.getElementsByClassName('portfolio-page')[0];
+let activePage = document.getElementById('prints');
 let activeMenuButton = document.getElementById('prints-btn');
+activeMenuButton.classList.add('active-btn');
 const subGalleryHolder = document.getElementById('clicked-img-holder');
 const subGallery = document.getElementById('clicked-img');
 const prevImg = document.getElementById('prev-img');
@@ -17,8 +18,10 @@ function hidePage(page) {
 }
 
 
-function changeActiveBtnColor(btn) {
-    btn.classList.add('active-btn');
+function switchActiveBtn(activeBtn, targetBtn) {
+    activeBtn.classList.remove('active-btn');
+    targetBtn.classList.add('active-btn');
+    activeMenuButton = targetBtn;
 }
 
 
@@ -57,8 +60,6 @@ events.forEach(
                 hidePage(galleries[i]);
             }
         }
-
-        changeActiveBtnColor(activeMenuButton);
     }
 );
 
@@ -72,14 +73,11 @@ function openNewPage(e) {
             hidePage(subGalleryHolder);
         }
 
-        if (e.target.id !== activeMenuButton || (e.target.id === activeMenuButton
-            && e.target.style.display === 'none')) {
-            activeMenuButton.classList.remove('active-btn');
-            activeMenuButton = e.target;
-            changeActiveBtnColor(activeMenuButton);
-            let btnId = activeMenuButton.id;
-            let galleryId = btnId.substr(0, btnId.length - 4);
+        if (e.target.id !== activeMenuButton || 
+            (e.target.id === activeMenuButton && e.target.style.display === 'none')) {
+            switchActiveBtn(activeMenuButton, e.target);
             hidePage(activePage);
+            let galleryId = activeMenuButton.id.substr(0, activeMenuButton.id.length - 4);
             activePage = document.getElementById(galleryId);
             activePage.classList.remove('hidden');
 
